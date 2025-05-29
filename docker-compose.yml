@@ -57,7 +57,7 @@ services:
       - '--storage.tsdb.retention.time=7d'
       - '--web.console.libraries=/usr/share/prometheus/console_libraries'
       - '--web.console.templates=/usr/share/prometheus/consoles'
-      - '--web.external-url=http://localhost:9090'
+      - '--web.external-url=http://localhost:9191'
     volumes:
       - ./configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./configs/prometheus/recording-rules.yml:/etc/prometheus/recording-rules.yml
@@ -66,7 +66,7 @@ services:
     depends_on:
       - alertmanager
     ports:
-      - 9090:9090
+      - 9191:9090
     cpus: 0.5
     mem_limit: 512m
     networks:
